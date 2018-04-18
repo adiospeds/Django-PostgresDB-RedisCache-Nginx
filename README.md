@@ -2,11 +2,12 @@
 A Hello world Django project that shows how redis can be used as a caching system for Django.
 
 Clone the project from below github link onto your machine: 
+Ensure docker version 17.03+ and docker-compose is installed.
 Steps to deploy the project:
 1. Enter the Project directory where you will find the docker compose file.
-2. Run "docker build" to create the images from Dockerfiles.
-3. Run "docker up -d" to start the stack
-  - This will spawn 4 instances.
+2. Run "docker-compose build" to create the images from Dockerfiles.
+3. Run "docker-compose up -d" to start the stack
+  - This will spawn 4 instances of Docker.
     - The Django Web instance which contains the actual code
     - The Postgres instance which acts as a database for Django.
     - The Redis Instance which acts as a caching layer.
