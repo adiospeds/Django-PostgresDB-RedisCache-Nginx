@@ -8,13 +8,13 @@ Steps to deploy the project:
 2. Run "docker-compose build" to create the images from Dockerfiles.
 3. Run "docker-compose up -d" to start the stack
   - This will spawn 4 instances of Docker.
-    - The Django Web instance which contains the actual code
+    - The Django Web instance which contains the actual code.
     - The Postgres instance which acts as a database for Django.
     - The Redis Instance which acts as a caching layer.
     - The Nginx instance which acts as a reverse proxy for the Django Web instance.
-  - Access http://localhost:80 on your browser to access the project.
+  - Access http://localhost:80 on your browser to access the project and it should display "Hello World"
   - Steps to check if caching works:
-    - Run "docker inspect <container-id>" on the redis instance and copy it's ip.
+    - Run "docker inspect \<container-id\>" on the redis instance and copy it's ip.
     - Then telnet to the redis instance using "telent <redis-container-ip> 6379".
     - Run "FLUSHALL" command inside telnet shell to flush the redis cache.
     - Then run "MONITOR" command to start monitoring the redis instance for any set-get events. (If monitor displays "OK" rerun       the "MONITOR" command until it waits for events.)
